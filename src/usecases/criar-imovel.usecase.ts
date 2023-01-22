@@ -1,4 +1,5 @@
-import { Imovel } from "@prisma/client";
+
+import { Imoveis } from "@prisma/client";
 import { ImovelDTO } from "../schemas/imovel.dto";
 import { Database } from "../utils/prismaInit";
 
@@ -7,11 +8,11 @@ export class criarImovel {
 
     async execute(imovelDTO: ImovelDTO) {
         
-        const imovel : Imovel = await Database.imovel.create({
+        const imovel : Imoveis = await Database.imoveis.create({
             data: {
                 ...imovelDTO,
-                especif: String(imovelDTO.especif),
-                informacoes: String(imovelDTO.informacoes)
+                especif: String(imovelDTO.especif ?? '[]'),
+                informacoes: String(imovelDTO.informacoes ?? '[]')
             }
         })
         .catch(e => {

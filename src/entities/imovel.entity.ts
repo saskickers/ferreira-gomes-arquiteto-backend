@@ -14,7 +14,7 @@ export class Imovel {
         this.id = id
         this.endereço = endereço,
         this.valor = valor,
-        this.especif = especif,
+        this.especif = especif ?? [],
         this.informacoes = informacoes,
         this.tipo = tipo,
         this.titulo = titulo
