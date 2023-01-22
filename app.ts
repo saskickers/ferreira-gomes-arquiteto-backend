@@ -1,4 +1,6 @@
 import express from "express";
+import { mkdir } from "fs";
+import { join } from "path";
 import { imovelDTO, updateImovelDTO } from "./src/schemas/imovel.dto";
 import { atualizarImovel } from "./src/usecases/atualizar-imovel.usecase";
 import { criarImovel } from "./src/usecases/criar-imovel.usecase";
@@ -32,6 +34,16 @@ App.put('/imoveis', validateRequest(updateImovelDTO), async (req, res) => {
     
     return res.status(201).send(imovel)
 
+})
+
+App.post('/test', async (req, res) => {
+
+    mkdir(join(__dirname, 'public', 'images', req.body.a), e => {
+        if (e) {
+            return res.status(500).send(e)
+        }
+        return res.status(201).send('Diretório criado.')
+    })
 })
 
 App.listen(3000)
