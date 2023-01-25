@@ -14,7 +14,7 @@ model Imoveis {
 
     id Int @id @default(autoincrement())
     createdAt String
-    folder String
+    fotos String
     valor Int
     titulo String
     endereco String
