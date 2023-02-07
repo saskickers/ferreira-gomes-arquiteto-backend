@@ -14,12 +14,25 @@ model Imoveis {
 
     id Int @id @default(autoincrement())
     createdAt String
-    fotos String
-    valor Int
-    titulo String
-    endereco String
-    especif String
+    condicao String
+    finalidade String
     tipo String
-    informacoes String
+    bairro String
+    rua String
+    titulo String 
+    fotos String
+    areaConstruida String? 
+    areaTotal String?
+    caracteristicas String?
+    descricao String?
+    infoAdicionais String?
+    quartos Int?
+    garagem Int?
+    salaEstar Int?
+    salaTv Int? 
+    suite Int? 
+    iptu String? 
+    condominio String? 
+    valor Int? 
 
 }

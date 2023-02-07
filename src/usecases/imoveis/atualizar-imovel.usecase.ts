@@ -1,5 +1,5 @@
-import { IupdateImovelDTO } from "../schemas/imovel.dto";
-import { Database } from "../utils/prismaInit";
+import { IupdateImovelDTO } from "../../schemas/imovel.dto";
+import { Database } from "../../utils/prismaInit";
 
 
 export class atualizarImovel {
@@ -27,7 +27,7 @@ export class atualizarImovel {
                 ...toParseObject
             }
         }).catch(e => {
-            return e
+            throw e
         })
 
         return updatedImovel

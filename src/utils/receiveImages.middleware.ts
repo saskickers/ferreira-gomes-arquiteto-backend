@@ -1,3 +1,4 @@
+import { createHash, randomUUID } from "crypto"
 import { NextFunction, Request, Response } from "express"
 import { mkdir, mkdirSync, rm, rmdir } from "fs"
 import multer, { Multer } from "multer"
@@ -21,11 +22,10 @@ export async function receivePictures(req: Request, res: Response, next: NextFun
     }
 
 
-    const folderNumber = await Database.imoveis.count() + 1
+    const folderId = randomUUID()
 
-    const imagesPath = `public/images/${folderNumber}`
+    const imagesPath = `public/images/${folderId}`
 
-    console.log(`There is ${folderNumber} registered imoveis.`)
 
     const storage = multer.diskStorage({
 

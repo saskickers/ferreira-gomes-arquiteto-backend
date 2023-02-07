@@ -1,7 +1,7 @@
 import { number, z } from "zod"
 
 const schema = z.object({
-    a: z.preprocess(parseToNumber, z.string())
+    a: z.preprocess(stringToArray, z.string().array())
 })
 
 function  parseToNumber(item: unknown) {
@@ -15,4 +15,13 @@ function  parseToNumber(item: unknown) {
     return item
 }
 
-console.log(schema.parse({a: '[2,3]'}))
+function stringToArray(item: unknown) {
+    
+    if (typeof item == 'string') {
+        return item.split(',')
+    }
+    return item
+}
+
+
+console.log(schema.parse({a: 'asd,dasda,asdas2'}))
