@@ -57,21 +57,21 @@ export const getImovelDTO = z.object({
     bairro: z.string(),
     rua: z.string(),
     titulo: z.string(),
-    areaConstruida: z.string().optional(),
-    areaTotal: z.string().optional(),
-    caracteristicas: z.string().array().optional(),
-    descricao: z.string().optional(),
-    infoAdicionais: z.string().optional(),
-    quartos: z.number().optional(),
-    garagem: z.number().optional(),
-    salaEstar: z.number().optional(),
-    salaTv: z.number().optional(),
-    suite: z.number().optional(),
-    iptu: z.string().optional(),
-    condominio: z.string().optional(),
-    valor: z.number().optional(),
+    areaConstruida: z.string().optional().nullable(),
+    areaTotal: z.string().optional().nullable(),
+    caracteristicas: z.string().array().optional().nullable(),
+    descricao: z.string().optional().nullable(),
+    infoAdicionais: z.string().optional().nullable(),
+    quartos: z.number().optional().nullable(),
+    garagem: z.number().optional().nullable(),
+    salaEstar: z.number().optional().nullable(),
+    salaTv: z.number().optional().nullable(),
+    suite: z.number().optional().nullable(),
+    iptu: z.string().optional().nullable(),
+    condominio: z.string().optional().nullable(),
+    valor: z.number().optional().nullable(),
     fotos: z.preprocess(stringToArray, z.string().array())
-})
+}).nullable()
 
 export const getAllImoveisDTO = getImovelDTO.array()
 

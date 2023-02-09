@@ -11,6 +11,7 @@ export class findImovel {
             return parsedImoveis
         }
         catch (e: any) {
+            console.log(e)
             throw e
         }
     }
