@@ -59,7 +59,7 @@ export const getImovelDTO = z.object({
     titulo: z.string(),
     areaConstruida: z.string().optional().nullable(),
     areaTotal: z.string().optional().nullable(),
-    caracteristicas: z.string().array().optional().nullable(),
+    caracteristicas: z.string(),
     descricao: z.string().optional().nullable(),
     infoAdicionais: z.string().optional().nullable(),
     quartos: z.number().optional().nullable(),
