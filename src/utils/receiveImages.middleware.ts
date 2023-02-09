@@ -54,7 +54,7 @@ export async function receivePictures(req: Request, res: Response, next: NextFun
         }
 
         req.filesPath = files.map((item) => {
-            return item.path
+            return `${folderId}/${item.originalname}`
         })
 
         req.folderPath = imagesPath

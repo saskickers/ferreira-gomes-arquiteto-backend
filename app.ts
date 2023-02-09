@@ -30,6 +30,8 @@ App.use(express.json())
 
 App.use(express.urlencoded({ extended: true }))
 
+App.use(express.static('./public'))
+
 App.post('/imoveis', receivePictures, validateRequest(criarImovelDTO), async (req, res) => {
 
     console.log(req.body)

@@ -51,27 +51,8 @@ export const updateImovelDTO = z.object({
 })
 
 export const getImovelDTO = z.object({
-    condicao: z.string(),
-    finalidade: z.string(),
-    tipo: z.string(),
-    bairro: z.string(),
-    rua: z.string(),
-    titulo: z.string(),
-    areaConstruida: z.string().optional().nullable(),
-    areaTotal: z.string().optional().nullable(),
-    caracteristicas: z.string(),
-    descricao: z.string().optional().nullable(),
-    infoAdicionais: z.string().optional().nullable(),
-    quartos: z.number().optional().nullable(),
-    garagem: z.number().optional().nullable(),
-    salaEstar: z.number().optional().nullable(),
-    salaTv: z.number().optional().nullable(),
-    suite: z.number().optional().nullable(),
-    iptu: z.string().optional().nullable(),
-    condominio: z.string().optional().nullable(),
-    valor: z.number().optional().nullable(),
     fotos: z.preprocess(stringToArray, z.string().array())
-}).nullable()
+}).passthrough()
 
 export const getAllImoveisDTO = getImovelDTO.array()
 
